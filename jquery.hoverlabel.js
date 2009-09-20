@@ -31,6 +31,9 @@
       // Delegate span focus to the overlayed form field
       overlay.click(function() { input.focus(); });
       
+      // Do not show overlay if the field already contains data
+      if(input.val() != '') { overlay.css('display', 'none'); }
+      
       // Hide and show for the span overlay
       input.focus(function() {
         overlay.css('display', 'none');
